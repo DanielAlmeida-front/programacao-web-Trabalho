@@ -1,0 +1,114 @@
+.cabecalho{
+    width: screen;
+    height: 200px;
+    background-image: linear-gradient(rgb(3, 50, 30) 40%, rgb(2, 105, 40));
+}
+body{
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+}
+.secao1{
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgb(2, 105, 40), rgb(101, 255, 111));
+}
+.initialText{
+    margin: 0px;
+    color: rgb(255, 255, 255);
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: left;
+    padding-left: 80px;
+    font-size: 70px;
+}
+.logo{
+    width: 200px; /* Largura da sua logo */
+    height: 100px; /* Altura da sua logo */
+    background-image: url('Logo.png');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: left;
+}
+.secaoPrincipal{
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgb(101, 255, 111), rgb(193, 255, 101));
+}
+.Selecao{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 100px;
+}
+.busca{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    gap: 20px;
+}
+.input{
+    width: 80%;
+    height: 30px;
+    border-radius: 20px;
+    border: black;
+    outline: none;
+    font-size: 16px;
+
+    background: white;
+}
+.input:focus {
+  background: white;
+  box-shadow: 0 0 20px rgb(164, 255, 180);
+  transform: scale(1.02);
+}
+.label{
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+.form-container {
+  background: rgba(255,255,255,0.2);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  width: 50%;
+  margin: auto;
+}
+.botao{
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background: #2ecc71;
+    font-weight: bold;
+    cursor:pointer;
+    color: white;
+
+    transition: 0.3s;
+
+    display:inline-block;
+    
+}
+button:hover {
+  background: #27ae60;
+  transform: scale(1.05);
+}
+.botaoform1{
+    padding-left: 10px;
+}
+#botaoform2{
+    padding-right: 10px;
+}
+.botoes {
+  display: flex;
+  justify-content: center; 
+  gap: 15px;               
+  margin-top: 20px;
+}
+.listagem{
+    width: 100%;
+    min-height: 600px;
+    background-image: (rgb(101, 255, 111), rgb(193, 255, 101));
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <nav class="cabecalho">
+        <div class="logo">
+        </div>
+    </nav>
+</head>
+<body>
+    <header class="secao1"> 
+        <h1 class="initialText">Acesse os seus livros favoritos aqui,<br>
+            e apronfunde seu conhecimento!
+    </header>
+    <main class="secaoPrincipal">
+        <div class="Selecao">
+             <button class="botao" id="listLivros">Listar Livros</button>
+            <button class="botao" id="modLivros">Modificar dados de Livros</button>
+             </div>
+             <div class="form-container">
+                 
+                 <div class="busca">
+                     <label class="label"> Id do livro: </label>
+                     <input class="input" id="idLivro"></input>
+                    </div>
+                    <div class="busca">
+                        <label class="label"> Titulo do Livro: </label>
+                        <input class="input" id="tituloLivro"></input>
+                    </div>
+                    <div class="busca">
+                        <label class="label">Autor do Livro: </label>
+                        <input class="input" id="autorLivro"></input>
+                        <div class="botoes">
+                            <button class="botao" id="addLivros">Adicionar Livro</button>
+                            <button class="botao" id="rmvLivros">Remover Livro</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="listagem"></div>
+
+                        <script>
+                            
+                            let idLivro = document.getElementById("idLivro")
+                            let tituloLivro= document.getElementById("tituloLivro")
+                            let autorLivro = document.getElementById("autorLivro")
+
+                            let listLivros = document.getElementById("listLivros")
+                            let addLivros = document.getElementById("addLivros")
+                            let modLivros = document.getElementById("modLivros")
+                            let rmvLivros = document.getElementById("rmvLivros")
+
+                            addLivros.addEventListener("click",()=>{
+                                    let livro = {
+                                                    titulo: tituloLivro.value,
+                                                    autor: autorLivro.value
+                                                }
+
+                            fetch("https://livros.acilab.com.br/api/livros",{
+                            method: "POST",
+                            headers:{
+                                "Content-Type":"application/json"
+                            }, 
+                            body:JSON.stringify(livro)
+                        })
+                            .then(response=>response.json())
+                            .then(dados=>{
+                                console.log("livro adicionado com sucesso!:",dados);
+                            })
+                             .catch(error => {
+                            console.log("Erro:", error)
+                            })
+                               })
+                        rmvLivros.addEventListener("click",()=>{
+                            fetch(`https://livros.acilab.com.br/api/livros/${idLivro.value}`,{
+                                method:"DELETE",
+                        })
+                        .then(response => response.json())
+                        .then(dados =>{
+                            console.log("Livro removido:", dados)
+                        })
+                         .catch(error => {
+                            console.log("Erro:", error)
+                        })
+
+                    })
+
+
+                    </script>
+                </div> 
+        
+        </main>
+</body>
+</html>
