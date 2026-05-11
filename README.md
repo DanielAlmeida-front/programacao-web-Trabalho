@@ -1,4 +1,5 @@
 # programacao-web-Trabalho
 Participantes:
 Adrya  
-Daniel  
+José Daniel  
+Arthur Pietro 
